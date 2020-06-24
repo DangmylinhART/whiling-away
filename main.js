@@ -10,22 +10,23 @@ while (num <=5){
     num = num + 1
 }
 }
-
 ChallengeBanner(1);
 challenge1();
 
 
 
 
-function challenge2(){
-let num = 2
-while(num <7 ){
-    console.log(num)
-    num = num + 1
+function challenge2(start, end){
+    while(start <= end){
+      console.log(start)
+      start = start + 1
+    }
 }
-}
-ChallengeBanner(2)
-challenge2(2, 6)
+    ChallengeBanner(2)
+    challenge2(2, 6)
+    challenge2(-2, 1)
+
+    
 
 
 
@@ -43,6 +44,7 @@ function challenge3(num1, num2){
 
 ChallengeBanner(3)
 challenge3(1,7)
+challenge3(-2,1)
 
 
 
@@ -53,6 +55,7 @@ function challenge5(){
     if(num % 2 === 0){ 
     console.log(num)}
     num = num + 1
+    // or num += 1 
     }
 }
 ChallengeBanner(5)
@@ -77,8 +80,9 @@ challenge6()
 function challenge7(){
     num = 10
     while(num >=1){
-        console.log(num + ' Blast off!')
+        console.log(num)
         num = num - 1
+        console.log('Blast off!')
     }
 }
 ChallengeBanner(7)
@@ -135,12 +139,14 @@ ChallengeBanner(11)
 challenge11('Get Out', 6)
 
 
-
 function challenge12(str){
-    let num = 0
-    while ( num <= str.length){
-        console.log(str[num])
-        num = num + 1
+    let i = 0
+    while ( i<= str.length){
+        console.log(str[i])
+        // OR const currentCharacter = str[1]
+        //    console.log(currentCharacter)
+        i++ 
+        // OR i = i + 1
     }
 }
 ChallengeBanner(12)
@@ -149,10 +155,12 @@ challenge12("think")
 
 
 function challenge13(str){
-    num = 1
-    while ( num <= str.length){
-        console.log(str[num])
-        num = num + 2
+    let i = 1                   // --> use 'Let' NOT 'const' cause challenge12 also has 'i'
+    while ( i <= str.length){
+        console.log(str[i])
+        // OR const currentCharacter = str[1]       // --> 'const' is ok, even challenge12 also has "currentCharacter"
+        //    console.log(currentCharacter)
+        i = i + 2
     }
 }
 ChallengeBanner(13)
@@ -160,10 +168,11 @@ challenge13('Nobody')
 
 
 function challenge14(str){
-    num = str.length
-    while( num >= 0){
-        console.log(str[num])
-        num = num - 1
+   let i= str.length-1
+    while( i >= 0){
+        console.log(str[i])
+        i --
+        // or i = i - 1
     }
 }
 ChallengeBanner(14)
@@ -188,26 +197,38 @@ challenge15(15)
 
 
 
-function challenge16(n){
-   let num1 = 1
-   let num2 = 1
-   let num = num1 + num2
-   console.log(num1)
-   console.log(num2)
-while( num <= n ){
-    console.log(num) 
-    num1 = num2
-    num2 = num
-    num = num1 + num2
+// function challenge16(n){
+//    let num1 = 1
+//    let num2 = 1
+//    let num = num1 + num2
+//    console.log(num1)
+//    console.log(num2)
+// while( num <= n ){
+//     console.log(num) 
+//     num1 = num2
+//     num2 = num
+//     num = num1 + num2
+// }
+// }
+// ChallengeBanner(16) 
+// challenge16(15)
+
+function fibonacci(end){
+    let current =1
+    let previous =1
+    console.log ( current);
+    while (current<= end){
+        console.log(current)
+        const temp = current;
+        current = current + previous
+        previous = temp
+    }
 }
-}
-ChallengeBanner(16) 
-challenge16(15)
+ChallengeBanner(17) 
+fibonacci(17)
+
+// 1,1,2,3,5,8,13,21
 
 
-
-
-// function replaceChar2(a){ return a.replace( 1 , 'h' ) }
-// let resultXO = replaceChar2('1linh')
-// console.log(resultXO); hinh
-
+// [master eb69870]  finish T_T
+//  1 file changed, 213 insertions(+)
